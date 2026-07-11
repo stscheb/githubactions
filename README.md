@@ -1,5 +1,7 @@
 # @stscheb/rating
 
+[![CI](https://github.com/stscheb/githubactions/actions/workflows/ci.yml/badge.svg)](https://github.com/stscheb/githubactions/actions/workflows/ci.yml)
+
 A tiny, accessible star-rating component for React. Built as a learning project for CI and GitHub Actions.
 
 - Live demo: https://stscheb.github.io/githubactions/
