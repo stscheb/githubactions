@@ -3,9 +3,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // base must match the GitHub Pages sub-path: https://stscheb.github.io/githubactions/
+// Demo app build (deployed to GitHub Pages). Kept in dist-demo/ so it never
+// collides with the library build in dist/.
 export default defineConfig({
   base: '/githubactions/',
   plugins: [react()],
+  build: {
+    outDir: 'dist-demo',
+  },
   test: {
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',

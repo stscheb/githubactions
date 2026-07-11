@@ -1,21 +1,57 @@
 {
   "name": "@stscheb/rating",
   "version": "0.1.0",
+  "description": "A tiny, accessible star-rating component for React.",
   "type": "module",
   "private": true,
+  "license": "MIT",
+  "author": "stscheb",
+  "keywords": [
+    "react",
+    "rating",
+    "stars",
+    "star-rating",
+    "component",
+    "accessible",
+    "a11y"
+  ],
+  "homepage": "https://stscheb.github.io/githubactions/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stscheb/githubactions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stscheb/githubactions/issues"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run build:lib && npm run build:demo",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:demo": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepack": "npm run build:lib"
   },
-  "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -31,9 +67,12 @@
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
     "jsdom": "^29.1.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.63.0",
     "vite": "^8.1.4",
+    "vite-plugin-dts": "^5.0.3",
     "vitest": "^4.1.10"
   }
 }
